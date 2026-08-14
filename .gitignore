@@ -1,0 +1,20 @@
+# https://dart.dev/tools/private-files
+# Created by `dart pub`
+.dart_tool/
+# Скомільовані файли та білди
+.dart_tool/
+build/
+.pub/
+.packages
+pubspec.lock  
+
+# Конфігурації IDE та редакторів
+.vscode/
+.idea/
+*.iml
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Операційна система
+.DS_Store
+Thumbs.db
