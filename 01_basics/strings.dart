@@ -99,7 +99,7 @@ void strings() {
   print(s19.isEmpty); // false
   print(s19.isNotEmpty); // true
 
-  /* allMatches - шукаємо всі входи символів або підрядка в рядку */
+  /* allMatches - шукаємо кількість входів символів або підрядка в рядку */
 
   var count = 'l'.allMatches(someStr).length;
   print(count); //
