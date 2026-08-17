@@ -173,6 +173,73 @@ void lists() {
     list17.any((el) => el.length > 3),
   ); // true (є рядки в котрих довжина більше ніж 3 символи)
   print(list17.any((el) => el.length > 7)); // false
+
+  /* Перемішати елементи списку(використання рандому) */
+  List<int> list18 = [1, 5, 6, 8, 9, 0];
+  list18.shuffle();
+  print(list18); // [9, 0, 5, 8, 6, 1]w
+
+  String text2 = "sometext";
+  List<String> list19 = text2.split(
+    "",
+  ); // [s, o, m, e,  , t, e, x, t] розбиваємо рядок на список з елементів
+  print(list19);
+
+  list19.shuffle(); // перемішуємо елементи(літери) списку
+  text2 = list19.join('');
+  print(text2); // toeesmtx
+
+  /*
+  reduce - використовується щоб об'єднати всі елементи списку в одне значення. value - стартує з 0,
+  а elem - кожен елемент списку. value - 0 + elem 1 = 1, далі value містить значення 1 і далі ми додаємо елемент 2
+  далі value містить вже 3 ітд.
+  */
+  List<int> numbers = [1, 2, 3, 4, 5, 6];
+  var sum = numbers.reduce((value, elem) {
+    return value += elem;
+  });
+
+  print(sum); // 21
+
+  /*(collection if) Використання умов прямо в списках */
+  var check = false;
+  var list20 = ["some", "people", "needs", if (check) "money"];
+  print(list20); // [some, people, needs]
+
+  check = true;
+  list20 = [
+    "some",
+    "people",
+    "needs",
+    if (check) "money",
+  ]; // щоб список побачив зміни котрі відбулисьб, треба перезаписати список
+  print(list20);
+
+  /* Цикли в списку та формування нового списку на базі старого */
+  var intList = [1, 2, 3, 5, 6, 7, 8];
+  var newList = [for (var i in intList) "#$i"];
+  print(newList);
+
+  var oddList = [
+    for (var i in intList)
+      if (i % 2 != 0) i,
+  ];
+
+  print(oddList);
+
+  /* При роботі з List операції копіювання виконуються по посиланні а не по значенні */
+  List newList1 = [
+    ['str1', 'str2', 'str3', 'str4', 'str5'],
+  ];
+  List newList2 = List<List<String>>.from(
+    newList1,
+  ); // копіюємо вкладений список
+  newList2[0].add('str6'); // змінюємо і масив з котрого зробили копію(а тобто маніпуляції відбуваються по посиланні)
+  newList2[0][2] = ('Str3');
+  print(newList2);
+
+  print('Елементи newList1: $newList1');
+  print('Елементи newList1: $newList2');
 }
 
 void main(List<String> args) {
