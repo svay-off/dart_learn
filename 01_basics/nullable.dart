@@ -38,6 +38,11 @@ void learnNullable() {
   Якщо ж користувач нічого не ввів і натиснув Enter (тобто text дорівнює null), програма не впаде з помилкою, а просто поверне null і надрукує його в консоль, акуратно обійшовши виклик методу .contains. 
   */
   print(text?.contains('g'));
+
+  /* ! після змінної але перед методом, каже нам що в змінній 100% буде не null */
+  String text2 = stdin.readLineSync()!; // користувач точно щось введе
+
+  print(text2.contains('s'));
 }
 
 void main(List<String> arguments) {
